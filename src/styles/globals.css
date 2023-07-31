@@ -1,0 +1,8 @@
+:root {
+  --primary-color: #FD9827;
+  --title-text: #08110C;
+  --sub-title-text: #313131;
+}
+*{
+  margin: 0;
+}
