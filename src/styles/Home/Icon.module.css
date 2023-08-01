@@ -1,0 +1,38 @@
+.IconsContainer{
+    background-color: #eaeaea;
+    padding: 3%;
+    display: flex;
+    gap: 1rem;
+}
+
+.EachIcon{
+    background-color: #ffffff;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px 30px;
+    border-radius: 10px;
+}
+
+.EachIcon h5{
+    font-family: "Crimson Text";
+    font-size: 14px;
+    font-weight: 500;
+    color: #244588;
+}
+
+.EachIcon h6{
+    font-family: "Crimson Text";
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.IconImage{
+    margin-bottom: 3%;
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}

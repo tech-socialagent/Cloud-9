@@ -1,6 +1,16 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import HeroSection from '@/Components/HeroSection'
+import HeroSection from '@/Components/Home/HeroSection'
+import Navbar from '@/Components/Home/Navbar'
+import Overview from '@/Components/Home/Overview'
+import Icons from '@/Components/Home/Icons'
+import Features from '@/Components/Home/Features'
+import Amenities from '@/Components/Home/Amenities'
+import FloorPlan from '@/Components/Home/Floor'
+import MasterPlan from '@/Components/Home/MasterPlan'
+import Location from '@/Components/Home/Location'
+import Gallery from '@/Components/Home/Gallery'
+import BankSection from '@/Components/Home/Bank'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,7 +24,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div>
+        <Navbar />
         <HeroSection />
+        <Overview />
+        <Icons />
+        <Features />
+        <Amenities />
+        <FloorPlan />
+        <MasterPlan />
+        <Location />
+        <Gallery />
+        <BankSection />
       </div>
     </>
   )

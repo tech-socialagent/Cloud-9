@@ -1,0 +1,78 @@
+.FloorWrap {
+    padding: 2% 3% 1%;
+}
+
+.FloorContainer {
+    margin-top: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.LeftImage {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.FloorCenter {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3%;
+}
+
+.FloorCenter h3{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.FloorCenter h3 span{
+    color: var(--primary-color);
+}
+
+.FloorCenter button {
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border: none;
+    color: #fff;
+    background-color: var(--btn-color);
+    font-size: 13px;
+    padding: 10px 27px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.FloorCenter button span {
+    display: flex;
+    font-size: 16px;
+}
+
+.NorhtImage {
+    position: absolute;
+    top: -15%;
+    width: 40%;
+    height: 40%;
+    object-fit: contain;
+}
+
+.FloorCenter table {
+    position: relative;
+    width: 80%;
+    border-collapse: collapse;
+}
+
+.FloorCenter table tr {}
+
+.FloorCenter table td {
+    text-align: center;
+}
+
+.RightImage{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

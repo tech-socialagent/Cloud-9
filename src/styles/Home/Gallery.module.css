@@ -1,0 +1,34 @@
+.GalleryContaier{
+    padding: 3% 4%;
+    display: flex;
+    gap: 2rem;
+}
+
+.EachGallery{
+    flex: 1;
+}
+
+.galleryImage{
+    margin: 4% 0%;
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+}
+
+.EachGallery button {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    border: none;
+    color: #fff;
+    background-color: var(--btn-color);
+    font-size: 13px;
+    padding: 10px 27px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.EachGallery button span {
+    display: flex;
+    font-size: 16px;
+}
