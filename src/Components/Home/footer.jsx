@@ -48,7 +48,7 @@ function Footer() {
                         <div className={styles.footerMenuItem} onClick={(e) => scrollToSection(e, "amenities")}>Amenities</div>
                         <div className={styles.footerMenuItem} onClick={(e) => scrollToSection(e, "floorPlan")}>Floorplan</div>
                         <div className={styles.footerMenuItem} onClick={(e) => scrollToSection(e, "masterPlan")}>Masterplan</div>
-                        <div className={styles.footerMenuItem} onClick={(e) => scrollToSection(e, "contact")}>Conatct</div>
+                        <div className={styles.footerMenuItem} onClick={(e) => scrollToSection(e, "contact")}>Contact</div>
                     </div>
                     <div className={styles.copyRight}>
                         <p>COPYRIGHT PRASIDDHI GROUP. ALL RIGHTS RESERVED.<u>| TERMS & CONDITIONS | DESIGN: DNM</u></p>

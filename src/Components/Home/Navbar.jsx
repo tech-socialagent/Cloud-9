@@ -35,7 +35,7 @@ function Navbar() {
                 <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "amenities")}>Amenities</div>
                 <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "floorPlan")}>Floorplan</div>
                 <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "masterPlan")}>Masterplan</div>
-                <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "contact")}>Conatct</div>
+                <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "contact")}>Contact</div>
             </div>
             <div className={styles.NavbarContacts}>
                 <span><BsTelephoneFill /></span>
@@ -54,7 +54,7 @@ function Navbar() {
                 <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "amenities")}>Amenities</div>
                 <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "floorPlan")}>Floorplan</div>
                 <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "masterPlan")}>Masterplan</div>
-                <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "contact")}>Conatct</div>
+                <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "contact")}>Contact</div>
             </div>
         </div>
     );
