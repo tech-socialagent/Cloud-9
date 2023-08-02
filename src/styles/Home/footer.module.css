@@ -111,3 +111,23 @@
         display: none;
     }
 } 
+
+
+/* Footer */
+
+.termsWrap{
+    margin: 2%;
+}
+
+.termsWrap h3{
+    font-size: 14px;
+    margin: 5px 0%;
+}
+
+.termsWrap p{
+    font-size: 12px;
+}
+
+.termsWrap li{
+    font-size: 12px;
+}

@@ -4,8 +4,11 @@ import { FaFacebookSquare, FaInstagramSquare, FaTwitterSquare, FaLinkedin } from
 import logo from '../../../public/Assets/logo.webp';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 function Footer() {
+
+    const router = useRouter();
 
     const scrollToSection = (e, id) => {
         e.preventDefault();
@@ -51,7 +54,7 @@ function Footer() {
                         <div className={styles.footerMenuItem} onClick={(e) => scrollToSection(e, "contact")}>Contact</div>
                     </div>
                     <div className={styles.copyRight}>
-                        <p>COPYRIGHT PRASIDDHI GROUP. ALL RIGHTS RESERVED.<u>| TERMS & CONDITIONS | DESIGN: DNM</u></p>
+                        <p>COPYRIGHT PRASIDDHI GROUP. ALL RIGHTS RESERVED.<u style={{cursor:'pointer'}} onClick={() => router.push('/terms&Conditions')}>| TERMS & CONDITIONS | DESIGN: DNM</u></p>
                     </div>
                 </div>
                 <div className={styles.socialIcons}>
@@ -69,7 +72,7 @@ function Footer() {
                     </Link>
                 </div>
             </div>
-            <p className={styles.copyRightContent}>COPYRIGHT PRASIDDHI GROUP. ALL RIGHTS RESERVED.<u>| TERMS & CONDITIONS | DESIGN: DNM</u></p>
+            <p className={styles.copyRightContent}>COPYRIGHT PRASIDDHI GROUP. ALL RIGHTS RESERVED.<u style={{cursor:'pointer'}} onClick={() => router.push('/terms&Conditions')}>| TERMS & CONDITIONS | DESIGN: DNM</u></p>
         </>
     );
 }

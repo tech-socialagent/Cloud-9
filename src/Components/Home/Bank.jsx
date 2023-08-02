@@ -47,7 +47,7 @@ function BankSection() {
         '/Assets/bank/bank3.webp',
         '/Assets/bank/bank4.webp',
         '/Assets/bank/bank5.webp',
-        '/Assets/bank/bank6.webp',
+        '/Assets/bank/centralBank.webp',
     ];
 
     const IconText = [
