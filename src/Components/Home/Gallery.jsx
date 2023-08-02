@@ -14,13 +14,13 @@ function Gallery() {
             title: 'Gallery',
             desc: 'Gallery.',
             para: 'Experience exquisite living amidst nature’s abundance.',
-            img: '/Assets/GAllery/gallery1.webp',
+            img: '/Assets/Gallery/gallery1.webp',
         },
         {
             title: 'Ready to move in',
             desc: 'Ready to move in.',
             para: 'Move-in ready twin villas, your dream homes await!',
-            img: '/Assets/GAllery/gallery2.webp',
+            img: '/Assets/Gallery/gallery2.webp',
         },
     ]
 

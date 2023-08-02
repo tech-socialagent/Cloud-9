@@ -1,6 +1,6 @@
 .HeroSection {
     height: 99vh;
-    background-image: url('../../../public/Assets/herobanner.webp');
+    background-image: url('../../../public/Assets/heroBanner.webp');
     background-size: cover;
     display: flex;
     justify-content: center;
