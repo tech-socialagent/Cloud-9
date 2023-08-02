@@ -6,7 +6,15 @@
   --sub-title-text: #313131;
   --btn-color: #FD9827;
 }
+
 *{
   margin: 0;
   font-family: Poppins;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  scroll-behavior: smooth !important;
 }

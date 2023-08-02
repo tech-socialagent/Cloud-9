@@ -36,9 +36,11 @@ function Icons() {
         <div className={styles.IconsContainer}>
             {iconData.map((item) => (
                 <div className={styles.EachIcon}>
-                    <Image src={item.img} alt='Icons' width={500} height={500} className={styles.IconImage}/>
-                    <h5>{item.title}</h5>
-                    <h6>{item.desc}</h6>
+                    <Image src={item.img} alt='Icons' width={500} height={500} className={styles.IconImage} />
+                    <div className={styles.EachIconText}>
+                        <h5>{item.title}</h5>
+                        <h6>{item.desc}</h6>
+                    </div>
                 </div>
             ))}
         </div>

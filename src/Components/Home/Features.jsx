@@ -52,7 +52,7 @@ function Features() {
     ]
 
     return (
-        <div className={styles.FeaturesWrap}>
+        <div className={styles.FeaturesWrap} id='features'>
             <SectionHeader title='Features' desc="Features." para="Prasiddhi luxury residences, embedded in greenery, surround you with class, comfort and an aura of abundance and autocracy." />
             <div className={styles.FeaturesContainer}>
                 <div className={styles.FeaturesLeft}>

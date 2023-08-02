@@ -68,7 +68,7 @@ function Amenities() {
     ]
 
     return (
-        <div className={styles.FeaturesWrap}>
+        <div className={styles.FeaturesWrap} id='amenities'>
             <SectionHeader title='Amenities' desc="Amenities." para="Prasiddhi luxury residences, embedded in greenery, surround you with class, comfort and an aura of abundance and autocracy." />
             <div className={styles.FeaturesContainer}>
                 <div className={styles.FeaturesLeft}>

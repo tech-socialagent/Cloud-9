@@ -32,9 +32,20 @@
     font-size: 13px;
     padding: 10px 27px;
     border-radius: 50px;
+    cursor: pointer;
 }
 
 .OverviewLeft button span{
     display: flex;
     font-size: 16px;
+}
+
+@media (max-width: 750px) {
+    .OverviewWrap{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .OverviewLeft button{
+        font-size: 12px;
+    }
 }

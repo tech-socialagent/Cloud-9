@@ -32,3 +32,9 @@
     display: flex;
     font-size: 16px;
 }
+
+@media (max-width: 750px) {
+    .GalleryContaier{
+        flex-direction: column;
+    }
+}

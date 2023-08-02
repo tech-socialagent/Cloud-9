@@ -30,18 +30,21 @@
 }
 
 .LocationRight p{
-    font-size: 15px;
+    font-size: 14px;
     text-decoration: underline;
 }
 
 .LocationRight h3{
+    font-size: 15px;
     font-weight: 500;
 }
 
 .flexContainer{
     margin: 3% 0%;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
+    gap: 4.2%;
     padding: 1.5% 4%;
     border-radius: 100px;
     box-shadow: #ffc19d 0px 2px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
@@ -62,4 +65,27 @@
     text-transform: uppercase;
     font-size: 12px;
     font-weight: 600;
+}
+
+@media (max-width: 1000px) {
+    .LocationMap{
+        width: 60%;
+    }
+}
+
+@media (max-width: 750px) {
+    .LocationMap{
+        width: 100%;
+    }
+    .LocationContainer{
+        flex-direction: column;
+        text-align: center;
+    }
+    .flexContainer{
+        padding: 3% 4%;
+        gap: 5%;
+        row-gap: 10px;
+        border-radius: 50px;
+        justify-content: center;
+    }
 }

@@ -5,6 +5,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 65px;
 }
 
 .HeroSection form {
@@ -114,3 +115,44 @@
     transform: rotate(270deg);
     cursor: pointer;
 }
+
+@media (max-width: 1000px) {
+    .title {
+        font-size: 18px;
+        padding: 0 15%;
+    }
+}
+
+@media (max-width: 810px) {
+    .inputWrap {
+        padding: 2%;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .inputWrap input {
+        padding: 2%;
+    }
+}
+
+@media (max-width: 750px) {
+    .title {
+        font-size: 16px;
+        padding: 0 12%;
+    }
+
+    .heroBtn {
+        /* padding: 5px 20px; */
+        font-size: 12px;
+    }
+
+    .enquire {
+        font-size: 14px;
+        right: -47.5px;
+    }
+    
+    .headerBottom {
+        font-size: 14px;
+    }
+}
+

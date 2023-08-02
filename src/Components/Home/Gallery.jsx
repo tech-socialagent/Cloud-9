@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from "@/styles/Home/Gallery.module.css";
 import SectionHeader from '../SectionHeader';
 import { FiArrowUpRight } from 'react-icons/fi';
 import Image from 'next/image';
+import { PopupContext } from '@/Context';
 
 function Gallery() {
+
+    const { setPopupOpen } = useContext(PopupContext);
 
     const galleryData = [
         {
@@ -27,7 +30,7 @@ function Gallery() {
                 <div className={styles.EachGallery}>
                     <SectionHeader title={item.title} desc={item.desc} para={item.para} />
                     <Image src={item.img} alt="Not found" width={1000} height={1000} className={styles.galleryImage}/>
-                    <button>Visit Now <span><FiArrowUpRight /></span></button>
+                    <button onClick={() => setPopupOpen(true)}>Visit Now <span><FiArrowUpRight /></span></button>
                 </div>
             ))}
         </div>
