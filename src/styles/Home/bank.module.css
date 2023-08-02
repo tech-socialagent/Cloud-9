@@ -1,0 +1,183 @@
+.bankWrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.titleImages {
+    padding: 2% 3%;
+    background: linear-gradient(#fef6f0, #fff);
+}
+
+.bankImages {
+    padding: 0% 5%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 3%;
+    border: 1px solid var(--primary-color);
+}
+
+.bankImage {
+    width: 115px;
+    height: 115px;
+    object-fit: contain;
+}
+
+.formAndTextContainer {
+    align-self: center;
+    width: 75%;
+    background-color: #fef2ea;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.formContainer {
+    margin: 10%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.menus {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.menu label {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.menu label span {
+    color: red;
+}
+
+.menu input,
+.menu textarea {
+    width: 100%;
+    border: none;
+    background-color: #eaeaea;
+    font-size: 10px;
+    border-radius: 5px;
+    padding: 13px 5px;
+    outline: none;
+}
+
+.menu select option {}
+
+.formBtn {
+    border: none;
+    width: max-content;
+    background-color: var(--primary-color);
+    color: #fff;
+    font-size: 12px;
+    padding: 7px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.formRight {
+    margin: 10% 10% 10% 0%;
+}
+
+.formRight h1 {
+    font-size: 22px;
+    line-height: 26px;
+}
+
+.formRight p {
+    padding: 4% 0%;
+    font-size: 12px;
+    border-bottom: 1px solid #000000;
+}
+
+.iconText {
+    margin: 4% 0%;
+    display: flex;
+    gap: 1rem;
+}
+
+.iconContainer {
+    display: flex;
+    color: var(--primary-color);
+    font-size: 20px;
+}
+
+.iconContainer span {}
+
+.iconRight {}
+
+.iconRight h4 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.iconRight h5 {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary-color);
+}
+
+@media (max-width: 1000px) {
+    .bankImages {
+        justify-content: center;
+        gap: 5%;
+    }
+
+    .bankImage {
+        width: 100px;
+        height: 100px;
+    }
+
+    .formAndTextContainer {
+        width: 90%;
+    }
+
+    .formRight h1 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .iconRight h4 {
+        font-size: 14px;
+    }
+
+    .iconRight h5 {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 750px) {
+    .formAndTextContainer {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .formContainer {
+        gap: 10px;
+    }
+
+    .formBtn {
+        margin-top: 4%;
+    }
+
+    .formRight {
+        margin: 0% 10% 2%;
+    }
+ 
+    .menu label {
+        font-size: 10px;
+        font-weight: 500;
+    }
+}

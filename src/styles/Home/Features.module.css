@@ -1,0 +1,86 @@
+.FeaturesWrap{
+    padding: 2% 3% 1%;
+}
+
+.FeaturesContainer{
+    display: grid;
+    grid-template-columns: 4% 92% 4%;
+}
+
+
+.FeaturesLeft, .FeaturesRight{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.FeaturesLeft span, .FeaturesRight span{
+    font-size: 32px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.FeaturesMain{
+    padding: 3% 2%;
+    display: flex;
+    gap: 3%;
+    width: 100%;
+    overflow: scroll;
+}
+
+
+.FeaturesMain::-webkit-scrollbar{
+    display: none;
+}
+
+.Features{
+    min-width: 200px;
+    overflow: hidden;
+}
+
+.FeatureImage{
+    width: 200px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.featureText{
+    display: flex;
+    gap: 0;
+}
+
+.featureText li{
+    margin-top: 3px;
+}
+
+.Features h5{
+    font-size: 15px;
+    font-weight: 500;
+    padding: 2% 0%;
+}
+
+@media (max-width: 750px) {
+    .FeaturesContainer{
+        display: grid;
+        grid-template-columns: 7% 86% 7%;
+    }
+    
+    .FeaturesMain{
+        gap: 0%;
+    }
+
+    .Features h5{
+        font-size: 12px;
+    }
+
+    .FeatureImage{
+        width: 170px;
+        height: 150px;
+    }
+
+    .FeaturesLeft span, .FeaturesRight span{
+        font-size: 24px;
+    }
+}
