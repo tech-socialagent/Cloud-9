@@ -163,6 +163,10 @@
         display: flex;
         flex-direction: column;
     }
+    
+    .formContainer {
+        gap: 10px;
+    }
 
     .formBtn {
         margin-top: 4%;
@@ -170,5 +174,10 @@
 
     .formRight {
         margin: 0% 10% 2%;
+    }
+ 
+    .menu label {
+        font-size: 10px;
+        font-weight: 500;
     }
 }
