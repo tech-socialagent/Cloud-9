@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import styles from '@/styles/Home/Floor.module.css';
 import SectionHeader from '../SectionHeader';
 import Image from 'next/image';
-import floorLeft from "../../../public/Assets/floor/floorLeft.webp"
+import floorLeft from "../../../public/Assets/floor/floorleft.webp"
 import floorRight from "../../../public/Assets/floor/floorRight.webp"
 import North from "../../../public/Assets/floor/North.webp";
 import { FiArrowUpRight } from 'react-icons/fi';
