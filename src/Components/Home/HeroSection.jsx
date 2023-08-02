@@ -42,7 +42,7 @@ const HeroSection = () => {
                 <form onSubmit={handleSubmit} >
                     <div className={styles.title}>
                         <span>Cloud 9 Nature Unbound</span> -Electronic City, Bangalore
-                        5BHK Villas Near E-City Bangalore From 2.5 Cr* Onwards
+                        5BHK Villas Near E-City Bangalore From 2.69 Cr* Onwards
                     </div>
                     <div className={styles.inputWrap}>
                         <input type="text" placeholder='Name' value={formData.name} name='name' onChange={handleInputChange} required/>
