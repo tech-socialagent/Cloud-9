@@ -2,10 +2,12 @@ import React from 'react';
 import styles from '@/styles/Home/footer.module.css';
 import Navbar from '@/Components/Home/Navbar';
 import Footer from '@/Components/Home/footer';
+import NavbarCopy from '@/Components/Home/Navbar copy';
 
 function TermsConditions() {
     return (
         <>
+            <NavbarCopy />
             <div className={styles.termsWrap}>
                 <h2><strong>Terms and Conditions</strong></h2>
 
