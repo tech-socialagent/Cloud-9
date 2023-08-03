@@ -41,11 +41,11 @@ const HeroSection = () => {
             <div className={styles.HeroSection}>
                 <form onSubmit={handleSubmit} >
                     <div className={styles.titleMobile}>
-                        <span>Cloud 9 Nature Unbound<br /></span> -Electronic City, Bengaluru<br />
+                        <span>Cloud 9 Villa Nature Unbound<br /></span> -Electronic City, Bengaluru<br />
                         5BHK Villas<br /> Near E-City Bengaluru<br /> From 2.69 Cr* Onwards
                     </div>
                     <div className={styles.title}>
-                        <span>Cloud 9 Nature Unbound</span> -Electronic City, Bengaluru
+                        <span>Cloud 9 Villa Nature Unbound</span> -Electronic City, Bengaluru<br />
                         5BHK Villas Near E-City Bengaluru From 2.69 Cr* Onwards
                     </div>
                     <div className={styles.inputWrap}>

@@ -47,7 +47,7 @@ function Footer() {
                     <div className={styles.footerMenu}>
                         <div className={styles.footerMenuItem} onClick={(e) => scrollToSection(e, "home")}>Home</div>
                         <div className={styles.footerMenuItem} onClick={(e) => scrollToSection(e, "aboutUs")}>About us</div>
-                        <div className={styles.footerMenuItem} onClick={(e) => scrollToSection(e, "features")}>Specifications</div>
+                        <div className={styles.footerMenuItem} onClick={(e) => scrollToSection(e, "features")}>Features</div>
                         <div className={styles.footerMenuItem} onClick={(e) => scrollToSection(e, "amenities")}>Amenities</div>
                         <div className={styles.footerMenuItem} onClick={(e) => scrollToSection(e, "floorPlan")}>Floorplan</div>
                         <div className={styles.footerMenuItem} onClick={(e) => scrollToSection(e, "masterPlan")}>Masterplan</div>

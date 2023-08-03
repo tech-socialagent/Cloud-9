@@ -18,35 +18,35 @@ function Features() {
 
     const Features = [
         {
-            img: '/Assets/features/Feature1.webp',
+            img: '/Assets/features/featureimg1.webp',
             title: 'Double Height Ceiling',
         },
         {
-            img: '/Assets/features/Feature2.webp',
-            title: 'Sloped Roof',
+            img: '/Assets/features/featureimg2.webp',
+            title: 'Sloped Roofs',
         },
         {
-            img: '/Assets/features/Feature3.webp',
+            img: '/Assets/features/featureimg3.webp',
             title: 'Customized Design',
         },
         {
-            img: '/Assets/features/Feature4.webp',
+            img: '/Assets/features/featureimg4.webp',
             title: 'Portico with 2 Car parks',
         },
         {
-            img: '/Assets/features/Feature5.webp',
+            img: '/Assets/features/featureimg5.webp',
             title: '17 Acres of Property, 140+ Villas',
         },
         {
-            img: '/Assets/features/Feature6.webp',
+            img: '/Assets/features/featureimg6.webp',
             title: '1500+ Trees',
         },
         {
-            img: '/Assets/features/Feature7.webp',
+            img: '/Assets/features/featureimg7.webp',
             title: 'World Class Amenities',
         },
         {
-            img: '/Assets/features/Feature8.webp',
+            img: '/Assets/features/featureimg8.webp',
             title: 'Lake View',
         },
     ]

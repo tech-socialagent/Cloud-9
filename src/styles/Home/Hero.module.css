@@ -21,7 +21,6 @@
 .title{
     font-family: 'Crimson Text', serif;
     font-size: 22px;
-    padding: 0 17%;
     text-align: center;
     font-weight: 700;
     color: var(--title-text);
@@ -127,10 +126,18 @@
     cursor: pointer;
 }
 
+@media (max-width: 1150px) {
+    .title {
+        font-size: 19px;
+    }
+}
+
 @media (max-width: 1000px) {
+    .HeroSection form {
+        width: 70vw;
+    }
     .title {
         font-size: 18px;
-        padding: 0 15%;
     }
 }
 
@@ -172,7 +179,13 @@
     }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 310px) {
+    .titleMobile {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 370px) {
     .HeroSection form {
         width: 70vw;
     }

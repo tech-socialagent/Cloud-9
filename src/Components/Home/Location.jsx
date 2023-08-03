@@ -44,7 +44,7 @@ function Location() {
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d56205.23698418843!2d77.68268302722723!3d12.804290922696605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6c3a0f757269%3A0xf8a79d1bdffaf23f!2sCloud9%20Villas%2C%20CLOUD-9%20VILLAS%2C%20Electronic%20City%2C%20Bengaluru%2C%20Bommasandra%2C%20Karnataka%20560099%2C%20India!5e0!3m2!1sen!2suk!4v1691038766301!5m2!1sen!2suk" width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
                 <div className={styles.LocationRight}>
-                    <p>Phone: 099008 47847</p>
+                    <p>Phone: +91 099008 47847</p>
                     <h3>5-Minute Drive From Electronic City.</h3>
                 </div>
             </div>

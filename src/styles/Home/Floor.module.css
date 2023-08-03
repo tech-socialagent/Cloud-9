@@ -1,11 +1,23 @@
 .FloorWrap {
-    padding: 2% 3% 1%;
+    padding: 2% 3% 5%;
 }
 
 .FloorContainer {
     margin-top: 5%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+
+.ImageAndFloor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ImageAndFloor h2{
+    font-size: 18px;
+    font-weight: 400;
 }
 
 .LeftImage {
