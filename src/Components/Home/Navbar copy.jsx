@@ -36,7 +36,7 @@ function NavbarCopy() {
                     <div className={styles.MenuItem}>About us</div>
                 </Link>
                 <Link href='/#features' style={{color:'#fff',textDecoration:'none'}}>
-                    <div className={styles.MenuItem}>Specifications</div>
+                    <div className={styles.MenuItem}>Features</div>
                 </Link>
                 <Link href='/#amenities' style={{color:'#fff',textDecoration:'none'}}>
                     <div className={styles.MenuItem}>Amenities</div>
@@ -69,7 +69,7 @@ function NavbarCopy() {
                     <div className={styles.MenuItem}>About us</div>
                 </Link>
                 <Link href='/#features' style={{color:'#fff',textDecoration:'none'}}>
-                    <div className={styles.MenuItem}>Specifications</div>
+                    <div className={styles.MenuItem}>Features</div>
                 </Link>
                 <Link href='/#amenities' style={{color:'#fff',textDecoration:'none'}}>
                     <div className={styles.MenuItem}>Amenities</div>

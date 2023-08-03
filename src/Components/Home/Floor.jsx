@@ -16,8 +16,9 @@ function FloorPlan() {
         <div className={styles.FloorWrap} id='floorPlan'>
             <SectionHeader title="Floor Plan" desc="Floor Plan." para="At Cloud9, you never have to leave home for the basics. That means, you have more time with your family to enjoy its exclusive amenities." />
             <div className={styles.FloorContainer}>
-                <div>
+                <div className={styles.ImageAndFloor}>
                     <Image src={floorLeft} alt="No Image" width={1000} height={1000} className={styles.LeftImage} />
+                    <h2>Ground Floor Plan</h2>
                 </div>
                 <div className={styles.FloorCenter}>
                     <Image src={North} alt="No Image" width={1000} height={1000} className={styles.NorhtImage} />
@@ -48,8 +49,9 @@ function FloorPlan() {
                     <h3>3337 – 3368 Sq.ft <span>₹2.69 cr</span> onwards</h3>
                     <button onClick={() => setPopupOpen(true)}>Visit Now <span><FiArrowUpRight /></span></button>
                 </div>
-                <div>
+                <div className={styles.ImageAndFloor}>
                     <Image src={floorRight} alt="No Image" width={1000} height={1000} className={styles.RightImage} />
+                    <h2>First Floor Plan</h2>
                 </div>
             </div>
         </div>

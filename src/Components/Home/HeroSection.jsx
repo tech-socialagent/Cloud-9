@@ -40,9 +40,13 @@ const HeroSection = () => {
         <div className={styles.heroWrap} id="home">
             <div className={styles.HeroSection}>
                 <form onSubmit={handleSubmit} >
+                    <div className={styles.titleMobile}>
+                        <span>Cloud 9 Villa Nature Unbound<br /></span> -Electronic City, Bengaluru<br />
+                        5BHK Villas<br /> Near E-City Bengaluru<br /> From 2.69 Cr* Onwards
+                    </div>
                     <div className={styles.title}>
-                        <span>Cloud 9 Nature Unbound</span> -Electronic City, Bangalore
-                        5BHK Villas Near E-City Bangalore From 2.69 Cr* Onwards
+                        <span>Cloud 9 Villa Nature Unbound</span> -Electronic City, Bengaluru<br />
+                        5BHK Villas Near E-City Bengaluru From 2.69 Cr* Onwards
                     </div>
                     <div className={styles.inputWrap}>
                         <input type="text" placeholder='Name' value={formData.name} name='name' onChange={handleInputChange} required/>

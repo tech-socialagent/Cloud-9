@@ -35,14 +35,26 @@
 }
 
 .Features{
-    min-width: 200px;
+    min-width: 230px;
     overflow: hidden;
 }
 
 .FeatureImage{
-    width: 200px;
-    height: 180px;
-    object-fit: cover;
+    width: 100%;
+    height: 170px;
+    object-fit: contain;
+    border-radius: 5px;
+}
+
+.Amenities{
+    min-width: 260px;
+    overflow: hidden;
+}
+
+.AmenitiesImage{
+    width: 100%;
+    height: 170px;
+    object-fit: contain;
     border-radius: 5px;
 }
 
@@ -68,19 +80,34 @@
     }
     
     .FeaturesMain{
-        gap: 0%;
+        gap: 15px;
     }
 
     .Features h5{
         font-size: 12px;
     }
 
-    .FeatureImage{
-        width: 170px;
-        height: 150px;
-    }
-
     .FeaturesLeft span, .FeaturesRight span{
         font-size: 24px;
     }
+
+    /* Mobile View Image */
+    .Features{
+        min-width: 210px;
+    }
+    
+    .FeatureImage{
+        height: 150px;
+        object-fit: cover;
+    }
+    
+    .Amenities{
+        min-width: 240px;
+    }
+    
+    .AmenitiesImage{
+        height: 150px;
+        object-fit: cover;
+    }
+    
 }

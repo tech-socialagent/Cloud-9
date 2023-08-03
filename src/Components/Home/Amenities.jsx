@@ -18,51 +18,51 @@ function Amenities() {
 
     const Features = [
         {
-            img: '/Assets/amenities/amenities1.webp',
+            img: '/Assets/amenitie/amenities1.webp',
             title: 'Gym',
         },
         {
-            img: '/Assets/amenities/amenities2.webp',
+            img: '/Assets/amenitie/amenities2.webp',
             title: 'Sloped Roof',
         },
         {
-            img: '/Assets/amenities/amenities3.webp',
+            img: '/Assets/amenitie/amenities3.webp',
             title: 'Children’s playing Area',
         },
         {
-            img: '/Assets/amenities/amenities4.webp',
+            img: '/Assets/amenitie/amenities4.webp',
             title: 'Tennis court',
         },
         {
-            img: '/Assets/amenities/amenities5.webp',
+            img: '/Assets/amenitie/amenities5.webp',
             title: 'Club House',
         },
         {
-            img: '/Assets/amenities/amenities6.webp',
+            img: '/Assets/amenitie/amenities6.webp',
             title: 'Pool Table',
         },
         {
-            img: '/Assets/amenities/amenities7.webp',
+            img: '/Assets/amenitie/amenities7.webp',
             title: 'Library',
         },
         {
-            img: '/Assets/amenities/amenities8.webp',
+            img: '/Assets/amenitie/amenities8.webp',
             title: 'Coffee Shop',
         },
         {
-            img: '/Assets/amenities/amenities9.webp',
+            img: '/Assets/amenitie/amenities9.webp',
             title: 'Skating Rink For children',
         },
         {
-            img: '/Assets/amenities/amenities10.webp',
+            img: '/Assets/amenitie/amenities10.webp',
             title: 'Provision For Grocery Shopping',
         },
         {
-            img: '/Assets/amenities/amenities11.webp',
+            img: '/Assets/amenitie/amenities11.webp',
             title: 'Party Hall',
         },
         {
-            img: '/Assets/amenities/amenities12.webp',
+            img: '/Assets/amenitie/amenities12.webp',
             title: 'Pets Park',
         },
     ]
@@ -76,8 +76,8 @@ function Amenities() {
                 </div>
                 <div className={styles.FeaturesMain} ref={scrl}>
                     {Features.map((item) => (
-                        <div className={styles.Features}>
-                            <Image src={item.img} alt="Feature Image" width={1000} height={1000} className={styles.FeatureImage} />
+                        <div className={styles.Amenities}>
+                            <Image src={item.img} alt="Feature Image" width={1000} height={1000} className={styles.AmenitiesImage} />
                             <div className={styles.featureText}><li></li><h5>{item.title}</h5></div>
                         </div>
                     ))}

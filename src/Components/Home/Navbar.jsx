@@ -31,7 +31,7 @@ function Navbar() {
             <div className={styles.NavbarMenu}>
                 <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "home")}>Home</div>
                 <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "aboutUs")}>About us</div>
-                <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "features")}>Specifications</div>
+                <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "features")}>Features</div>
                 <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "amenities")}>Amenities</div>
                 <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "floorPlan")}>Floorplan</div>
                 <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "masterPlan")}>Masterplan</div>
@@ -50,7 +50,7 @@ function Navbar() {
                 <span onClick={() => setOpen(false)}><AiFillCloseCircle /></span>
                 <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "home")}>Home</div>
                 <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "aboutUs")}>About us</div>
-                <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "features")}>Specifications</div>
+                <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "features")}>Features</div>
                 <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "amenities")}>Amenities</div>
                 <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "floorPlan")}>Floorplan</div>
                 <div className={styles.MenuItem} onClick={(e) => scrollToSection(e, "masterPlan")}>Masterplan</div>
