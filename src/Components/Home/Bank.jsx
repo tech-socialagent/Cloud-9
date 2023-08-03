@@ -64,10 +64,7 @@ function BankSection() {
         {
             icon: <IoLocationSharp />,
             title: 'Corporate Office Location',
-            desc: `No: 79, Bhagyasri Complex, 2nd floor, 80 feet
-            road, (Opp to MSR hospital gate) RMV 2nd Stage,
-            Devasandra, Sanjay Nagar,
-            Bangalore - 560094.`
+            desc: <>CLOUD-9 VILLAS, Electronic City, Bengaluru, Bommasandra, Karnataka 560099, India`</>
         },
     ]
 
