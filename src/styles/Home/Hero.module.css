@@ -18,7 +18,7 @@
     border-radius: 15px;
 }
 
-.title {
+.title{
     font-family: 'Crimson Text', serif;
     font-size: 22px;
     padding: 0 17%;
@@ -30,7 +30,18 @@
     margin-bottom: 2%;
 }
 
-.title span {
+.titleMobile{
+    font-family: 'Crimson Text', serif;
+    text-align: center;
+    font-weight: 700;
+    color: var(--title-text);
+    border-bottom: #000 1px solid;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+    font-size: 16px;
+}
+
+.title span, .titleMobile span{
     background-color: var(--secondary-color);
 }
 
@@ -137,8 +148,7 @@
 
 @media (max-width: 750px) {
     .title {
-        font-size: 16px;
-        padding: 0 12%;
+        display: none;
     }
 
     .heroBtn {
@@ -153,6 +163,24 @@
     
     .headerBottom {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 350px) {
+    .titleMobile {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 300px) {
+    .HeroSection form {
+        width: 70vw;
+    }
+}
+
+@media (min-width: 751px) {
+    .titleMobile {
+        display: none;
     }
 }
 
