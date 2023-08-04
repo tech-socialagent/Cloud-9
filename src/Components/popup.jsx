@@ -3,6 +3,7 @@ import styles from '@/styles/popup.module.css';
 import { AiFillCloseCircle } from 'react-icons/ai'
 import { PopupContext } from '@/Context';
 import emailjs from 'emailjs-com';
+import axios from 'axios';
 
 function Popup() {
 
@@ -22,6 +23,25 @@ function Popup() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        const leadData = {
+            data: [
+              {
+                Last_Name: formData.name,
+                Email: formData.email,
+                Phone: formData.phone,
+                Description:formData.message,
+              },
+            ],
+          };
+
+        axios.post('/api/zohoapi',leadData)
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.error('Error sending data:', error);
+        });
 
         emailjs.send("service_pker1vg", "template_b0e6cwb", formData, "5rfKZaLJ19e--qaGr")
         .then(() => {

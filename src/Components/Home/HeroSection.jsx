@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import styles from '@/styles/Home/Hero.module.css'
 import { PopupContext } from '@/Context';
 import emailjs from 'emailjs-com';
+import axios from 'axios';
 
 const HeroSection = () => {
     
@@ -20,6 +21,24 @@ const HeroSection = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        const leadData = {
+            data: [
+              {
+                Last_Name: formData.name,
+                Email: formData.email,
+                Phone: formData.phone,
+              },
+            ],
+          };
+
+        axios.post('/api/zohoapi',leadData)
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.error('Error sending data:', error);
+        });
 
         emailjs.send("service_pker1vg", "template_b0e6cwb", formData, "5rfKZaLJ19e--qaGr")
         .then(() => {
@@ -41,12 +60,12 @@ const HeroSection = () => {
             <div className={styles.HeroSection}>
                 <form onSubmit={handleSubmit} >
                     <div className={styles.titleMobile}>
-                        <span>Cloud 9 Villa Nature Unbound<br /></span> -Electronic City, Bengaluru<br />
-                        5BHK Villas<br /> Near E-City Bengaluru<br /> From 2.69 Cr* Onwards
+                        <span>Cloud 9 Villa Nature Unbound<br /></span>
+                        5BHK Villas<br /> Near Electronic City Bengaluru<br /> From 2.69 Cr* Onwards
                     </div>
                     <div className={styles.title}>
-                        <span>Cloud 9 Villa Nature Unbound</span> -Electronic City, Bengaluru<br />
-                        5BHK Villas Near E-City Bengaluru From 2.69 Cr* Onwards
+                        <span>Cloud 9 Villa Nature Unbound</span><br />
+                        5BHK Villas Near Electronic City Bengaluru From 2.69 Cr* Onwards
                     </div>
                     <div className={styles.inputWrap}>
                         <input type="text" placeholder='Name' value={formData.name} name='name' onChange={handleInputChange} required/>

@@ -7,6 +7,7 @@ import { IoCall } from 'react-icons/io5';
 import { IoLocationSharp } from 'react-icons/io5';
 import emailjs from 'emailjs-com';
 import Link from 'next/link';
+import axios from 'axios';
 
 function BankSection() {
 
@@ -24,6 +25,25 @@ function BankSection() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+
+        const leadData = {
+            data: [
+              {
+                Last_Name: formData.name,
+                Email: formData.email,
+                Phone: formData.phone,
+                Description:formData.message,
+              },
+            ],
+          };
+
+        axios.post('/api/zohoapi',leadData)
+        .then((response) => {
+          console.log(response.data);
+        })
+        .catch((error) => {
+          console.error('Error sending data:', error);
+        });
 
         emailjs.send("service_pker1vg", "template_b0e6cwb", formData, "5rfKZaLJ19e--qaGr")
             .then(() => {
