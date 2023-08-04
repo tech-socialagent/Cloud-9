@@ -76,8 +76,8 @@ function Amenities() {
                 </div>
                 <div className={styles.FeaturesMain} ref={scrl}>
                     {Features.map((item) => (
-                        <div className={styles.Amenities}>
-                            <Image src={item.img} alt="Feature Image" width={1000} height={1000} className={styles.AmenitiesImage} />
+                        <div className={styles.Features}>
+                            <Image src={item.img} alt="Feature Image" width={1000} height={1000} className={styles.FeatureImage} />
                             <div className={styles.featureText}><li></li><h5>{item.title}</h5></div>
                         </div>
                     ))}
