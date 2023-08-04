@@ -141,7 +141,7 @@
     }
 
     .formAndTextContainer {
-        width: 90%;
+        width: 100%;
     }
 
     .formRight h1 {
@@ -159,11 +159,19 @@
 }
 
 @media (max-width: 750px) {
+    .bankImages{
+        padding:0% 3%;
+        gap: 7%;
+    }
     .formAndTextContainer {
         display: flex;
         flex-direction: column;
     }
-    
+    .menus{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
     .formContainer {
         gap: 10px;
     }
