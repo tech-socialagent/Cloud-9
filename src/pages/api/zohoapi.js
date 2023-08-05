@@ -42,14 +42,14 @@ export default async function handler(req, res) {
 
 
   try {
-    // const response = await axios.post(tokenEndpoint, requestData, {
-    //   headers: {
-    //     'Content-Type': 'application/x-www-form-urlencoded',
-    //   },
-    // });
+    const response = await axios.post(tokenEndpoint, requestData, {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+    });
 
     // Handle the response data
-    const accessToken = "1000.d0e9f6ef1078ebb2f6d6a2ee2a232956.8f96698cc6420fdf56ba677ac01595d4";
+    const accessToken = response.data.access_token;
     //Send Data to Zoho Leads
 
     const jsonData = JSON.stringify(req.body);
@@ -64,14 +64,14 @@ export default async function handler(req, res) {
         console.log('Lead created successfully:', response.data);
       })
       .catch((error) => {
-        console.error('Error creating lead:', error.message);
+        console.log('Error creating lead:', error);
       });
 
     // Return the response to the client
-    return res.status(200).json(sendData.data);
+    return res.status(200).json(sendData);
   } catch (error) {
     // Handle errors
-    console.error('Error getting access token:', error.response);
+    console.log('Error getting access token:', error.response);
     return res.status(500).json({ error: 'Failed to get access token' });
   }
 }
