@@ -1,7 +1,29 @@
 import axios from 'axios';
 import querystring from 'querystring';
+import Cors from 'cors';
+
+// Initialize the cors middleware
+const cors = Cors({
+  origin: 'https://campaign.prasiddhigroup.com/', // Replace with your deployed website's URL
+  methods: ['POST'], // Add the allowed HTTP methods here
+});
+
+// Helper function to apply the cors middleware to the API route
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+      return resolve(result);
+    });
+  });
+}
 
 export default async function handler(req, res) {
+
+  await runMiddleware(req, res, cors);
+
   const refreshToken = process.env.REFRESH_TOKEN;
   const clientId = process.env.CLIENT_ID;
   const clientSecret = process.env.CLIENT_SECRET;
