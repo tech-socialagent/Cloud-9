@@ -60,17 +60,17 @@ export default async function handler(req, res) {
         },
       })
       .then((response) => {
-        console.log('Lead created successfully:', response.data);
+        console.log('Lead created successfully:', response);
       })
       .catch((error) => {
-        console.error('Error creating lead:', error.message);
+        console.error('Error creating lead:', error);
       });
 
     // Return the response to the client
     return res.status(200).json("Lead created successfully");
   } catch (error) {
     // Handle errors
-    console.error('Error getting access token:', error.response);
+    console.error('Error getting access token:', error);
     return res.status(500).json({ error: 'Failed to get access token' });
   }
 }
