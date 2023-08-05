@@ -66,7 +66,7 @@ export default async function handler(req, res) {
       });
 
     // Return the response to the client
-    return res.status(200).json(response.data);
+    return res.status(200).json(req.body);
   } catch (error) {
     // Handle errors
     console.error('Error getting access token:', error.response);
