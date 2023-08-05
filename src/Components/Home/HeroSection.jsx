@@ -40,19 +40,19 @@ const HeroSection = () => {
           console.error('Error sending data:', error);
         });
 
-        emailjs.send("service_pker1vg", "template_b0e6cwb", formData, "5rfKZaLJ19e--qaGr")
-        .then(() => {
-          console.log('Email sent successfully.');
-          // Clear the form after successful submission
-          setFormData({
-            name:'',
-            email: '',
-            phone: '',
-        })
-        })
-        .catch((error) => {
-          console.error('Email failed to send : ', error);
-        });
+        // emailjs.send("service_pker1vg", "template_b0e6cwb", formData, "5rfKZaLJ19e--qaGr")
+        // .then(() => {
+        //   console.log('Email sent successfully.');
+        //   // Clear the form after successful submission
+        //   setFormData({
+        //     name:'',
+        //     email: '',
+        //     phone: '',
+        // })
+        // })
+        // .catch((error) => {
+        //   console.error('Email failed to send : ', error);
+        // });
     }
 
     return (

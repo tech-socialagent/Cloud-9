@@ -42,14 +42,14 @@ export default async function handler(req, res) {
 
 
   try {
-    const response = await axios.post(tokenEndpoint, requestData, {
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-    });
+    // const response = await axios.post(tokenEndpoint, requestData, {
+    //   headers: {
+    //     'Content-Type': 'application/x-www-form-urlencoded',
+    //   },
+    // });
 
     // Handle the response data
-    const accessToken = response.data.access_token;
+    const accessToken = "1000.d0e9f6ef1078ebb2f6d6a2ee2a232956.8f96698cc6420fdf56ba677ac01595d4";
     //Send Data to Zoho Leads
 
     const jsonData = JSON.stringify(req.body);
