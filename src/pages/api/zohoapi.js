@@ -1,7 +1,29 @@
 import axios from 'axios';
 import querystring from 'querystring';
+import Cors from 'cors';
+
+// Initialize the cors middleware
+const cors = Cors({
+  origin: 'https://campaign.prasiddhigroup.com/', // Replace with your deployed website's URL
+  methods: ['POST'], // Add the allowed HTTP methods here
+});
+
+// Helper function to apply the cors middleware to the API route
+function runMiddleware(req, res, fn) {
+  return new Promise((resolve, reject) => {
+    fn(req, res, (result) => {
+      if (result instanceof Error) {
+        return reject(result);
+      }
+      return resolve(result);
+    });
+  });
+}
 
 export default async function handler(req, res) {
+
+  await runMiddleware(req, res, cors);
+
   const refreshToken = process.env.REFRESH_TOKEN;
   const clientId = process.env.CLIENT_ID;
   const clientSecret = process.env.CLIENT_SECRET;
@@ -38,17 +60,17 @@ export default async function handler(req, res) {
         },
       })
       .then((response) => {
-        console.log('Lead created successfully:', response.data);
+        console.log('Lead created successfully:', response);
       })
       .catch((error) => {
-        console.error('Error creating lead:', error.message);
+        console.error('Error creating lead:', error);
       });
 
     // Return the response to the client
     return res.status(200).json("Lead created successfully");
   } catch (error) {
     // Handle errors
-    console.error('Error getting access token:', error.response);
+    console.error('Error getting access token:', error);
     return res.status(500).json({ error: 'Failed to get access token' });
   }
 }
