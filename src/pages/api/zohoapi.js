@@ -5,7 +5,7 @@ import Cors from 'cors';
 // Initialize the cors middleware
 const cors = Cors({
   origin: 'https://campaign.prasiddhigroup.com/', // Replace with your deployed website's URL
-  methods: ['POST','GET'], // Add the allowed HTTP methods here
+  methods: ['POST', 'GET'], // Add the allowed HTTP methods here
 });
 
 // Helper function to apply the cors middleware to the API route
@@ -55,11 +55,11 @@ export default async function handler(req, res) {
     const jsonData = JSON.stringify(req.body);
 
     const sendData = axios.post(LeadEndpoint, jsonData, {
-        headers: {
-          'Authorization': `Zoho-oauthtoken ${accessToken}`,
-          'Content-Type': 'application/json',
-        },
-      })
+      headers: {
+        'Authorization': `Zoho-oauthtoken ${accessToken}`,
+        'Content-Type': 'application/json',
+      },
+    })
       .then((response) => {
         console.log('Lead created successfully:', response.data);
       })

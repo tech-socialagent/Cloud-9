@@ -84,7 +84,7 @@ function BankSection() {
         {
             icon: <IoLocationSharp />,
             title: 'Corporate Office Location',
-            desc: <>CLOUD-9 VILLAS, Electronic City, Bengaluru, Bommasandra, Karnataka 560099, India`</>
+            desc: <>CLOUD-9 VILLAS, Electronic City, Bengaluru, Bommasandra, Karnataka 560099, India</>
         },
     ]
 

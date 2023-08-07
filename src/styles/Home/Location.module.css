@@ -52,6 +52,7 @@
 
 .flexItem{
     text-align: center;
+    cursor: pointer;
 }
 
 .flexItemImage{
