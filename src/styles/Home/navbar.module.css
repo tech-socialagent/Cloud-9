@@ -52,9 +52,20 @@
     cursor: pointer;
 }
 
+.menuIcon{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 .menuIcon span {
     cursor: pointer;
     font-size: 30px;
+}
+
+.menuCallIcon {
+    cursor: pointer;
+    font-size: 22px !important;
 }
 
 .phneMenu{

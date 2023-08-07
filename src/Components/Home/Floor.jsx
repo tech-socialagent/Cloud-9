@@ -35,11 +35,6 @@ function FloorPlan() {
                                 <td>3368</td>
                             </tr>
                             <tr>
-                                <td>Unit-1</td>
-                                <td>2250</td>
-                                <td>3368</td>
-                            </tr>
-                            <tr>
                                 <td>Unit-2</td>
                                 <td>2250</td>
                                 <td>3337</td>

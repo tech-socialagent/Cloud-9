@@ -5,7 +5,7 @@ import Cors from 'cors';
 // Initialize the cors middleware
 const cors = Cors({
   origin: 'https://campaign.prasiddhigroup.com/', // Replace with your deployed website's URL
-  methods: ['POST'], // Add the allowed HTTP methods here
+  methods: ['POST', 'GET'], // Add the allowed HTTP methods here
 });
 
 // Helper function to apply the cors middleware to the API route
@@ -52,25 +52,26 @@ export default async function handler(req, res) {
     const accessToken = response.data.access_token;
     //Send Data to Zoho Leads
 
-    axios
-      .post(LeadEndpoint, req.body, {
-        headers: {
-          'Authorization': `Zoho-oauthtoken ${accessToken}`,
-          'Content-Type': 'application/json',
-        },
-      })
+    const jsonData = JSON.stringify(req.body);
+
+    const sendData = axios.post(LeadEndpoint, jsonData, {
+      headers: {
+        'Authorization': `Zoho-oauthtoken ${accessToken}`,
+        'Content-Type': 'application/json',
+      },
+    })
       .then((response) => {
-        console.log('Lead created successfully:', response);
+        console.log('Lead created successfully:', response.data);
       })
       .catch((error) => {
-        console.error('Error creating lead:', error);
+        console.log('Error creating lead:', error);
       });
 
     // Return the response to the client
-    return res.status(200).json("Lead created successfully");
+    return res.status(200).json(sendData);
   } catch (error) {
     // Handle errors
-    console.error('Error getting access token:', error);
+    console.log('Error getting access token:', error.response);
     return res.status(500).json({ error: 'Failed to get access token' });
   }
 }

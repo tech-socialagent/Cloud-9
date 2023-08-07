@@ -40,19 +40,19 @@ const HeroSection = () => {
           console.error('Error sending data:', error);
         });
 
-        emailjs.send("service_pker1vg", "template_b0e6cwb", formData, "5rfKZaLJ19e--qaGr")
-        .then(() => {
-          console.log('Email sent successfully.');
-          // Clear the form after successful submission
-          setFormData({
-            name:'',
-            email: '',
-            phone: '',
-        })
-        })
-        .catch((error) => {
-          console.error('Email failed to send : ', error);
-        });
+        // emailjs.send("service_pker1vg", "template_b0e6cwb", formData, "5rfKZaLJ19e--qaGr")
+        // .then(() => {
+        //   console.log('Email sent successfully.');
+        //   // Clear the form after successful submission
+        //   setFormData({
+        //     name:'',
+        //     email: '',
+        //     phone: '',
+        // })
+        // })
+        // .catch((error) => {
+        //   console.error('Email failed to send : ', error);
+        // });
     }
 
     return (
@@ -60,7 +60,8 @@ const HeroSection = () => {
             <div className={styles.HeroSection}>
                 <form onSubmit={handleSubmit} >
                     <div className={styles.titleMobile}>
-                        <span>Cloud 9 Villas Nature Unbound<br /></span>
+                        <span>Cloud 9 Villa <br /> Nature Unbound<br /></span>
+
                         5BHK Villas<br /> Near Electronic City Bengaluru<br /> From 2.69 Cr* Onwards
                     </div>
                     <div className={styles.title}>
