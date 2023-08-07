@@ -22,37 +22,37 @@ const HeroSection = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        const leadData = {
-            data: [
-              {
-                Last_Name: formData.name,
-                Email: formData.email,
-                Phone: formData.phone,
-              },
-            ],
-          };
+        // const leadData = {
+        //     data: [
+        //       {
+        //         Last_Name: formData.name,
+        //         Email: formData.email,
+        //         Phone: formData.phone,
+        //       },
+        //     ],
+        //   };
 
-        axios.post('/api/zohoapi',leadData)
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.error('Error sending data:', error);
-        });
-
-        // emailjs.send("service_pker1vg", "template_b0e6cwb", formData, "5rfKZaLJ19e--qaGr")
-        // .then(() => {
-        //   console.log('Email sent successfully.');
-        //   // Clear the form after successful submission
-        //   setFormData({
-        //     name:'',
-        //     email: '',
-        //     phone: '',
-        // })
+        // axios.post('/api/zohoapi',leadData)
+        // .then((response) => {
+        //   console.log(response.data);
         // })
         // .catch((error) => {
-        //   console.error('Email failed to send : ', error);
+        //   console.error('Error sending data:', error);
         // });
+
+        emailjs.send("service_pker1vg", "template_b0e6cwb", formData, "5rfKZaLJ19e--qaGr")
+        .then(() => {
+          console.log('Email sent successfully.');
+          // Clear the form after successful submission
+          setFormData({
+            name:'',
+            email: '',
+            phone: '',
+        })
+        })
+        .catch((error) => {
+          console.error('Email failed to send : ', error);
+        });
     }
 
     return (
