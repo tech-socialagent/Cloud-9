@@ -5,11 +5,14 @@ import Image from 'next/image';
 import { RiSendPlaneFill } from 'react-icons/ri';
 import { IoCall } from 'react-icons/io5';
 import { IoLocationSharp } from 'react-icons/io5';
+import { AiOutlineLoading } from 'react-icons/ai';
 import emailjs from 'emailjs-com';
 import Link from 'next/link';
 import axios from 'axios';
 
 function BankSection() {
+
+    const [ sending, setSending ] = useState(false);
 
     const [formData, setFormData] = useState({
         name: '',
@@ -33,20 +36,20 @@ function BankSection() {
                 console.error('Error sending data:', error);
             });
 
-        // emailjs.send("service_pker1vg", "template_b0e6cwb", formData, "5rfKZaLJ19e--qaGr")
-        //     .then(() => {
-        //         console.log('Email sent successfully.');
-        //         // Clear the form after successful submission
-        //         setFormData({
-        //             name: '',
-        //             email: '',
-        //             phone: '',
-        //             message: '',
-        //         })
-        //     })
-        //     .catch((error) => {
-        //         console.error('Email failed to send : ', error);
-        //     });
+        emailjs.send("service_pker1vg", "template_b0e6cwb", formData, "5rfKZaLJ19e--qaGr")
+            .then(() => {
+                console.log('Email sent successfully.');
+                // Clear the form after successful submission
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    message: '',
+                })
+            })
+            .catch((error) => {
+                console.error('Email failed to send : ', error);
+            });
     }
 
     const bankImgData = [

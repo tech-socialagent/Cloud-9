@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styles from "@/styles/Gallery/galleryMain.module.css";
 import SectionHeader from '../SectionHeader';
 import Image from 'next/image';
+import { PopupContext } from '@/Context';
 
 function GalleryMain() {
+
+    const { setPopupOpen } = useContext(PopupContext);
 
     const galleryImages = [
         {
@@ -125,6 +128,7 @@ function GalleryMain() {
                         <Image src={item.img} width={1000} height={1000} className={styles.singleImage} />
                     </div>
                 ))}
+                <div className={styles.enquire} onClick={() => setPopupOpen(true)}>Enquire Now</div>
             </div>
         </div>
     );

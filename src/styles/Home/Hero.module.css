@@ -118,7 +118,7 @@
     padding: 5px 20px;
     color: #fff;
     border-radius: 10px 10px 0 0;
-    position: absolute;
+    position: fixed;
     background-color: var(--primary-color);
     top: 65%;
     right: -52px;

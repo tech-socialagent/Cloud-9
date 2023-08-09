@@ -30,8 +30,8 @@ function Gallery() {
             {galleryData.map((item) => (
                 <div className={styles.EachGallery}>
                     <SectionHeader title={item.title} desc={item.desc} para={item.para} />
-                    <Image src={item.img} alt="Not found" width={1000} height={1000} className={styles.galleryImage}/>
-                    <Link href="/gallery" style={{textDecoration:'none',color:'#fff'}}>
+                    <Link href="/gallery" style={{ textDecoration: 'none', color: '#fff' }}>
+                        <Image src={item.img} alt="Not found" width={1000} height={1000} className={styles.galleryImage} />
                         <button>View More<span><FiArrowUpRight /></span></button>
                     </Link>
                 </div>
