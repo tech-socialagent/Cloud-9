@@ -2,6 +2,9 @@ import axios from 'axios';
 import qs from 'qs';
 
 export default async function handler(req, res) {
+
+  const formData = req.body
+
   const refreshToken = '1000.ff65beba525dfa8799d8b9b3f67e92ae.40cf247a4a0b2931929d51342a2e702f';
   const clientId = '1000.RVZIBJI2A0VQT596B34R8TG41DUCHH';
   const clientSecret = 'f5077f55a1bd904fa4d2518829c62c628fdc514349';
@@ -34,9 +37,9 @@ export default async function handler(req, res) {
     const leadData = {
       "data": [
         {
-          "Last_Name": "abcd",
-          "Email": "test@gmail.com",
-          "Phone": "9876543210"
+          "Last_Name": formData.name,
+          "Email": formData.email,
+          "Phone": formData.phone,
         }
       ]
     };

@@ -21,18 +21,7 @@ const HeroSection = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        // const leadData = {
-        //     data: [
-        //       {
-        //         Last_Name: formData.name,
-        //         Email: formData.email,
-        //         Phone: formData.phone,
-        //       },
-        //     ],
-        //   };
-
-        axios.post('/api/zohonew')
+        axios.post('/api/zohonew',formData)
             .then((response) => {
                 console.log(response);
                 setFormData({
