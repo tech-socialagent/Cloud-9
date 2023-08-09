@@ -40,6 +40,7 @@ export default async function handler(req, res) {
           "Last_Name": formData.name,
           "Email": formData.email,
           "Phone": formData.phone,
+          "Description": formData.message,
         }
       ]
     };
