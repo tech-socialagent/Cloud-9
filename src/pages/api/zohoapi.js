@@ -76,3 +76,36 @@ export default async function handler(req, res) {
   }
 }
 
+
+
+//Zoho Code
+
+var myHeaders = new Headers();
+myHeaders.append("Authorization", "Zoho-oauthtoken 1000.8ed1axxxxxxxxx19c3.575e8e50556a68e6da75a781ff4591ec");
+myHeaders.append("Content-Type", "application/json");
+myHeaders.append("Cookie", "34561a6e49=05e68ae6a7c2f7d782946ef8f4a221ad; 941ef25d4b=26e785490eba82a048fdbe4337cde743; JSESSIONID=98F6C57287188F34D90E33B9E4949DBD; _zcsr_tmp=55d82305-d053-40d3-998a-530693ac4c30; crmcsr=55d82305-d053-40d3-998a-530693ac4c30");
+
+var raw = JSON.stringify({
+"data": [
+{
+"Company": "API testing 1243",
+"Last_Name": "testings",
+"Lead_Status": "Contacted ",
+"Email": "test@gmail.com",
+"Phone": "66655457444",
+"Mobile": "89656898765"
+}
+]
+});
+
+var requestOptions = {
+method: 'POST',
+headers: myHeaders,
+body: raw,
+redirect: 'follow'
+};
+
+fetch("https://www.zohoapis.in/crm/v2/Leads", requestOptions)
+.then(response => response.text())
+.then(result => console.log(result))
+.catch(error => console.log('error', error));
