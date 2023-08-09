@@ -5,11 +5,14 @@ import Image from 'next/image';
 import { RiSendPlaneFill } from 'react-icons/ri';
 import { IoCall } from 'react-icons/io5';
 import { IoLocationSharp } from 'react-icons/io5';
+import { AiOutlineLoading } from 'react-icons/ai';
 import emailjs from 'emailjs-com';
 import Link from 'next/link';
 import axios from 'axios';
 
 function BankSection() {
+
+    const [ sending, setSending ] = useState(false);
 
     const [formData, setFormData] = useState({
         name: '',
@@ -25,25 +28,13 @@ function BankSection() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        const leadData = {
-            data: [
-              {
-                Last_Name: formData.name,
-                Email: formData.email,
-                Phone: formData.phone,
-                Description:formData.message,
-              },
-            ],
-          };
-
-        axios.post('/api/zohoapi',leadData)
-        .then((response) => {
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.error('Error sending data:', error);
-        });
+        axios.post('/api/zohonew', formData)
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                console.error('Error sending data:', error);
+            });
 
         emailjs.send("service_pker1vg", "template_b0e6cwb", formData, "5rfKZaLJ19e--qaGr")
             .then(() => {
@@ -101,16 +92,16 @@ function BankSection() {
                     <div className={styles.menus}>
                         <div className={styles.menu}>
                             <label>Full Name<span>*</span></label>
-                            <input type="text" placeholder='Enter full name' name='name' value={formData.name} onChange={handleInputChange} required/>
+                            <input type="text" placeholder='Enter full name' name='name' value={formData.name} onChange={handleInputChange} required />
                         </div>
                         <div className={styles.menu}>
                             <label>Phone number<span>*</span></label>
-                            <input type="text" placeholder='Enter your phone number' name='phone' value={formData.phone} onChange={handleInputChange} required/>
+                            <input type="text" placeholder='Enter your phone number' name='phone' value={formData.phone} onChange={handleInputChange} required />
                         </div>
                     </div>
                     <div className={styles.menu}>
                         <label>Email<span>*</span></label>
-                        <input type="text" placeholder='Enter your email' name='email' value={formData.email} onChange={handleInputChange} required/>
+                        <input type="text" placeholder='Enter your email' name='email' value={formData.email} onChange={handleInputChange} required />
                     </div>
                     <div className={styles.menu}>
                         <label>Which is your enquiry about?</label>

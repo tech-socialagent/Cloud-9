@@ -32,7 +32,7 @@ function NavbarCopy() {
                 <Link href='/#home' style={{color:'#fff',textDecoration:'none'}}>
                     <div className={styles.MenuItem}>Home</div>
                 </Link>
-                <Link href='/#about' style={{color:'#fff',textDecoration:'none'}}>
+                <Link href='/#aboutUs' style={{color:'#fff',textDecoration:'none'}}>
                     <div className={styles.MenuItem}>About us</div>
                 </Link>
                 <Link href='/#features' style={{color:'#fff',textDecoration:'none'}}>

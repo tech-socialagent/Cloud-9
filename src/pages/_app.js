@@ -1,7 +1,12 @@
 import '@/styles/globals.css'
 import Script from 'next/script'
+import { PopupContext } from '@/Context'
+import { useState } from 'react';
 
 export default function App({ Component, pageProps }) {
+
+  const [popupOpen, setPopupOpen] = useState(false);
+
   return (
     <>
       <Script strategy="afterInteractive" dangerouslySetInnerHTML={{
@@ -10,7 +15,9 @@ export default function App({ Component, pageProps }) {
         j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-MLR264PQ');`}}></Script>
-      <Component {...pageProps} />
+      <PopupContext.Provider value={{ popupOpen, setPopupOpen }}>
+        <Component {...pageProps} />
+      </PopupContext.Provider>
     </>
   )
 }

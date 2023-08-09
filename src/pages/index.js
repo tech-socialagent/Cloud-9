@@ -12,26 +12,26 @@ import Location from '@/Components/Home/Location'
 import Gallery from '@/Components/Home/Gallery'
 import BankSection from '@/Components/Home/Bank'
 import Footer from '@/Components/Home/footer'
-import { useContext, useEffect, useState } from 'react'
-import { PopupContext } from '@/Context'
+import { useContext, useEffect } from 'react'
 import Popup from '@/Components/popup'
+import { PopupContext } from '@/Context'
 
 export default function Home() {
 
-  const [popupOpen, setPopupOpen] = useState(false);
-
+  const { popupOpen, setPopupOpen } = useContext(PopupContext);
+ 
   useEffect(() => {
     const hasShownPopup = localStorage.getItem('hasShownPopup');
 
     if (!hasShownPopup) {
-    const timeout = setTimeout(() => {
-      setPopupOpen(true);
-      localStorage.setItem('hasShownPopup', true);
-    }, 5000);
+      const timeout = setTimeout(() => {
+        setPopupOpen(true);
+        localStorage.setItem('hasShownPopup', true);
+      }, 5000);
 
-    return () => {
-      clearTimeout(timeout);
-    };
+      return () => {
+        clearTimeout(timeout);
+      };
     }
   }, []);
 
@@ -43,21 +43,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <PopupContext.Provider value={{ popupOpen, setPopupOpen }}>
-        {popupOpen && <Popup />}
-        <Navbar />
-        <HeroSection />
-        <Overview />
-        <Icons />
-        <Features />
-        <Amenities />
-        <FloorPlan />
-        <MasterPlan />
-        <Location />
-        <Gallery />
-        <BankSection />
-        <Footer />
-      </PopupContext.Provider>
+      {popupOpen && <Popup />}
+      <Navbar />
+      <HeroSection />
+      <Overview />
+      <Icons />
+      <Features />
+      <Amenities />
+      <FloorPlan />
+      <MasterPlan />
+      <Location />
+      <Gallery />
+      <BankSection />
+      <Footer />
     </>
   )
 }
