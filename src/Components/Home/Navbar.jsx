@@ -46,7 +46,7 @@ function Navbar() {
             <div className={styles.menuIcon}>
                 <Link href='tel:+919900847847' style={{ display: 'flex', alignItems: 'center', gap: '8px', textDecoration: 'none', color: '#fff' }}>
                     <span className={styles.menuCallIcon}><BsTelephoneFill /></span>
-                </Link>
+                 </Link>
                 <span onClick={() => setOpen(true)}><BiMenuAltLeft /></span>
             </div>
             <div className={styles.phneMenu} style={{ right: open ? '0' : '-30vh' }}>
