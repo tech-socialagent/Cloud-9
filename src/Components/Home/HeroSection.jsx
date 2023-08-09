@@ -5,7 +5,7 @@ import emailjs from 'emailjs-com';
 import axios from 'axios';
 
 const HeroSection = () => {
-    
+
     const { setPopupOpen } = useContext(PopupContext);
 
     const [formData, setFormData] = useState({
@@ -21,38 +21,32 @@ const HeroSection = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        axios.post('/api/zohonew',formData)
+            .then((response) => {
+                console.log(response);
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                })
+            })
+            .catch((error) => {
+                console.error('Error sending data:', error);
+            });
 
-        // const leadData = {
-        //     data: [
-        //       {
-        //         Last_Name: formData.name,
-        //         Email: formData.email,
-        //         Phone: formData.phone,
-        //       },
-        //     ],
-        //   };
-
-        // axios.post('/api/zohoapi',leadData)
-        // .then((response) => {
-        //   console.log(response.data);
+        // emailjs.send("service_pker1vg", "template_b0e6cwb", formData, "5rfKZaLJ19e--qaGr")
+        // .then(() => {
+        //   console.log('Email sent successfully.');
+        //   // Clear the form after successful submission
+        //   setFormData({
+        //     name:'',
+        //     email: '',
+        //     phone: '',
+        // })
         // })
         // .catch((error) => {
-        //   console.error('Error sending data:', error);
+        //   console.error('Email failed to send : ', error);
         // });
-
-        emailjs.send("service_pker1vg", "template_b0e6cwb", formData, "5rfKZaLJ19e--qaGr")
-        .then(() => {
-          console.log('Email sent successfully.');
-          // Clear the form after successful submission
-          setFormData({
-            name:'',
-            email: '',
-            phone: '',
-        })
-        })
-        .catch((error) => {
-          console.error('Email failed to send : ', error);
-        });
     }
 
     return (
@@ -69,9 +63,9 @@ const HeroSection = () => {
                         5BHK Villas Near Electronic City Bengaluru From 2.69 Cr* Onwards
                     </div>
                     <div className={styles.inputWrap}>
-                        <input type="text" placeholder='Name' value={formData.name} name='name' onChange={handleInputChange} required/>
-                        <input type="email" placeholder='Email' value={formData.email} name='email' onChange={handleInputChange} required/>
-                        <input type="tel" placeholder='Phone Number' value={formData.phone} name='phone' onChange={handleInputChange} required/>
+                        <input type="text" placeholder='Name' value={formData.name} name='name' onChange={handleInputChange} required />
+                        <input type="email" placeholder='Email' value={formData.email} name='email' onChange={handleInputChange} required />
+                        <input type="tel" placeholder='Phone Number' value={formData.phone} name='phone' onChange={handleInputChange} required />
                     </div>
                     <button className={styles.heroBtn} type='submit'>SUBMIT</button>
                 </form>
