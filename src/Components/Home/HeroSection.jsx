@@ -55,7 +55,7 @@ const HeroSection = () => {
     return (
         <div className={styles.heroWrap} id="home">
             <div className={styles.HeroSection}>
-                <form onSubmit={handleSubmit} >
+                <form onSubmit={handleSubmit} id="HeroSectionForm">
                     <div className={styles.titleMobile}>
                         <span>Cloud 9 Villa <br /> Nature Unbound<br /></span>
                         5BHK Villas<br /> Near Electronic City Bengaluru<br /> From 2.69 Cr* Onwards

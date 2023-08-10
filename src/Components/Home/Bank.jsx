@@ -91,7 +91,7 @@ function BankSection() {
                 </div>
             </div>
             <div className={styles.formAndTextContainer} id='contact'>
-                <form onSubmit={handleSubmit} className={styles.formContainer}>
+                <form onSubmit={handleSubmit} className={styles.formContainer} id="ContactForm">
                     <div className={styles.menus}>
                         <div className={styles.menu}>
                             <label>Full Name<span>*</span></label>

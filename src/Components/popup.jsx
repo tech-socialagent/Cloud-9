@@ -60,7 +60,7 @@ function Popup() {
           <h1>Contact Form</h1>
           <span className={styles.closeIcon} onClick={() => setPopupOpen(false)}><AiFillCloseCircle /></span>
         </div>
-        <form className={styles.popupForm} onSubmit={handleSubmit}>
+        <form className={styles.popupForm} onSubmit={handleSubmit} id="PopupForm">
           <input type="text" placeholder='Name' value={formData.name} name='name' onChange={handleInputChange} />
           <input type="email" placeholder='Email' name='email' value={formData.email} onChange={handleInputChange} />
           <input type="tel" placeholder='Phone Number' name='phone' value={formData.phone} onChange={handleInputChange} />
