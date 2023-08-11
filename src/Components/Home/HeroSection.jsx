@@ -55,7 +55,7 @@ const HeroSection = () => {
     return (
         <div className={styles.heroWrap} id="home">
             <div className={styles.HeroSection}>
-                <form onSubmit={handleSubmit} >
+                <form onSubmit={handleSubmit} id="HeroSectionForm">
                     <div className={styles.titleMobile}>
                         <span>Cloud 9 Villa <br /> Nature Unbound<br /></span>
 
