@@ -129,6 +129,12 @@
     color: var(--primary-color);
 }
 
+.formContainer p{
+    text-align: center;
+    font-size: 10px;
+    font-weight: 500;
+}
+
 @media (max-width: 1000px) {
     .bankImages {
         justify-content: center;

@@ -3,7 +3,6 @@ import styles from "@/styles/Home/Gallery.module.css";
 import SectionHeader from '../SectionHeader';
 import { FiArrowUpRight } from 'react-icons/fi';
 import Image from 'next/image';
-import { PopupContext } from '@/Context';
 import Link from 'next/link';
 
 function Gallery() {

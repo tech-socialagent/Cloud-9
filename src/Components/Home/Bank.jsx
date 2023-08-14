@@ -5,13 +5,13 @@ import Image from 'next/image';
 import { RiSendPlaneFill } from 'react-icons/ri';
 import { IoCall } from 'react-icons/io5';
 import { IoLocationSharp } from 'react-icons/io5';
-import { AiOutlineLoading } from 'react-icons/ai';
 import emailjs from 'emailjs-com';
 import Link from 'next/link';
 import axios from 'axios';
 
 function BankSection() {
 
+    const [open, setOpen] = useState(false);
     const [sending, setSending] = useState(false);
 
     const [formData, setFormData] = useState({
@@ -28,11 +28,20 @@ function BankSection() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        setSending(true);
 
         const leadData = formData
         axios.post('/api/zohonew', leadData)
             .then((response) => {
                 console.log(response);
+                setSending(false);
+                setOpen(true);
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    message: '',
+                })
             })
             .catch((error) => {
                 console.error('Error sending data:', error);
@@ -47,12 +56,6 @@ function BankSection() {
                 console.error('Email failed to send : ', error);
             });
 
-        setFormData({
-            name: '',
-            email: '',
-            phone: '',
-            message: '',
-        })
     }
 
     const bankImgData = [
@@ -78,7 +81,7 @@ function BankSection() {
         {
             icon: <IoLocationSharp />,
             title: 'Corporate Office Location',
-            desc: <>CLOUD-9 VILLAS, Electronic City, Bengaluru, Bommasandra, Karnataka 560099, India</>
+            desc: `CLOUD-9 VILLAS, Electronic City, Bengaluru, Bommasandra, Karnataka 560099, India.`
         },
     ]
 
@@ -117,7 +120,8 @@ function BankSection() {
                         </select> */}
                         <textarea type="text" placeholder='Message' name='message' value={formData.message} onChange={handleInputChange} />
                     </div>
-                    <button type="submit" className={styles.formBtn}>Send Message</button>
+                    <button type="submit" className={styles.formBtn} style={{ cursor: sending ? "not-allowed" : "pointer" }}>{sending === true ? 'Sending...' : 'Send Message'}</button>
+                    {open && <p>Thank you for submitting. Our team will get back to you soon.</p>}
                 </form>
                 <div className={styles.formRight}>
                     <h1>Get in touch to schedule a visit to your new house.</h1>
