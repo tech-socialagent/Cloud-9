@@ -1,0 +1,37 @@
+.thankContainer{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.thankContainer div{
+    font-size: 44px;
+    color: var(--primary-color);
+}
+
+
+.thankContainer button{
+    border: none;
+    width: max-content;
+    background-color: var(--primary-color);
+    color: #fff;
+    margin: 5px 0px;
+    font-size: 14px;
+    padding: 7px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+@media (max-width: 400px) {
+    .thankContainer h1{
+        font-size: 24px;
+    }
+    .thankContainer p{
+        font-size: 12px;
+    }
+}

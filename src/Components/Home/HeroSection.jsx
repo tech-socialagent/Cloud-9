@@ -3,11 +3,12 @@ import styles from '@/styles/Home/Hero.module.css'
 import { PopupContext } from '@/Context';
 import emailjs from 'emailjs-com';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 const HeroSection = () => {
 
     // const [ sending, setSending ] = useState(true);
-
+    const router = useRouter();
     const { setPopupOpen } = useContext(PopupContext);
 
     const [open, setOpen] = useState(false);
@@ -40,6 +41,7 @@ const HeroSection = () => {
                     phone: '',
                     message: '',
                 })
+                router.push('/thankyou')
             })
             .catch((error) => {
                 console.error('Error sending data:', error);
@@ -74,7 +76,7 @@ const HeroSection = () => {
                         <input type="tel" placeholder='Phone Number' value={formData.phone} name='phone' onChange={handleInputChange} required />
                     </div>
                     <button className={styles.heroBtn} type='submit' style={{ cursor: sending === true ? 'not-allowed' : 'pointer' }}>{ sending === true ? 'Sending...' : 'SUBMIT'}</button>
-                   {open && <p>Thank you for submitting. Our team will get back to you soon.</p>}
+                   {/*open && <p>Thank you for submitting. Our team will get back to you soon.</p>*/}
                 </form>
                 <div className={styles.enquire} onClick={() => setPopupOpen(true)}>Enquire Now</div>
             </div>

@@ -4,11 +4,12 @@ import { AiFillCloseCircle } from 'react-icons/ai'
 import { PopupContext } from '@/Context';
 import emailjs from 'emailjs-com';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 function Popup() {
 
   const { setPopupOpen } = useContext(PopupContext);
-
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -38,7 +39,6 @@ function Popup() {
       .then(() => {
         console.log('Email sent successfully.');
         // Clear the form after successful submission
-        setPopupOpen(false);
       })
       .catch((error) => {
         console.error('Email failed to send : ', error);
@@ -50,6 +50,8 @@ function Popup() {
       phone: '',
       message: '',
     })
+    setPopupOpen(false);
+    router.push('/thankyou');
   }
 
   return (
