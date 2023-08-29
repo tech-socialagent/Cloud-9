@@ -8,12 +8,13 @@ import { IoLocationSharp } from 'react-icons/io5';
 import emailjs from 'emailjs-com';
 import Link from 'next/link';
 import axios from 'axios';
+import { useRouter } from 'next/router';
 
 function BankSection() {
 
     const [open, setOpen] = useState(false);
     const [sending, setSending] = useState(false);
-
+    const router = useRouter();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -41,7 +42,8 @@ function BankSection() {
                     email: '',
                     phone: '',
                     message: '',
-                })
+                });
+                router.push('/thankyou');
             })
             .catch((error) => {
                 console.error('Error sending data:', error);
@@ -121,7 +123,7 @@ function BankSection() {
                         <textarea type="text" placeholder='Message' name='message' value={formData.message} onChange={handleInputChange} />
                     </div>
                     <button type="submit" className={styles.formBtn} style={{ cursor: sending ? "not-allowed" : "pointer" }}>{sending === true ? 'Sending...' : 'Send Message'}</button>
-                    {open && <p>Thank you for submitting. Our team will get back to you soon.</p>}
+                    {/*open && <p>Thank you for submitting. Our team will get back to you soon.</p>*/}
                 </form>
                 <div className={styles.formRight}>
                     <h1>Get in touch to schedule a visit to your new house.</h1>
