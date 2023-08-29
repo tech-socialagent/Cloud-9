@@ -11,9 +11,10 @@ const page = () => {
             <div className={styles.thankContainer}>
                 <div><LuMailCheck /></div>
                 <h1>Thanks for submitting!</h1>
-                <p>your message has been send!</p>
+                <p>Your message has been sent! <br />
+                    Our team will be getting back to you shortly.</p>
                 <Link href='/' style={{ textDecoration: 'none', color: 'white' }}>
-                    <button>Home</button>
+                    <button>Go Home</button>
                 </Link>
             </div>
         </>

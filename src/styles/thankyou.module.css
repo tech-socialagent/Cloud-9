@@ -5,6 +5,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     gap: 10px;
 }
 
@@ -13,9 +14,6 @@
     color: var(--primary-color);
 }
 
-.thankContainer h1{
-    text-align: center;
-}
 
 .thankContainer button{
     border: none;
@@ -32,5 +30,8 @@
 @media (max-width: 400px) {
     .thankContainer h1{
         font-size: 24px;
+    }
+    .thankContainer p{
+        font-size: 12px;
     }
 }
