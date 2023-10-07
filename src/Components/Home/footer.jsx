@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from '@/styles/Home/footer.module.css';
 import { FaFacebookSquare, FaInstagramSquare, FaTwitterSquare, FaLinkedin } from 'react-icons/fa';
 import logo from '../../../public/Assets/logo.webp';
@@ -22,6 +22,10 @@ function Footer() {
             behavior: "smooth"
         });
     };
+
+    useEffect(() => {
+        window.lintrk('track', { conversion_id: 15662801 });
+    },[])
 
     return (
         <>
