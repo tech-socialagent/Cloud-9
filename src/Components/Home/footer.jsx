@@ -24,8 +24,14 @@ function Footer() {
     };
 
     useEffect(() => {
-        window.lintrk('track', { conversion_id: 15662801 });
-    },[])
+        if (typeof window !== 'undefined') {
+            window.lintrk = window.lintrk || function () {
+                (window.lintrk.q = window.lintrk.q || []).push(arguments);
+            };
+            // Initialize the tracking code, if needed
+            window.lintrk('track', { conversion_id: '15736121' });
+        }
+    }, []);
 
     return (
         <>
@@ -58,7 +64,7 @@ function Footer() {
                         <div className={styles.footerMenuItem} onClick={(e) => scrollToSection(e, "contact")}>Contact</div>
                     </div>
                     <div className={styles.copyRight}>
-                        <p>COPYRIGHT PRASIDDHI GROUP. ALL RIGHTS RESERVED.<u style={{cursor:'pointer'}} onClick={() => router.push('/terms&Conditions')}>| TERMS & CONDITIONS | DESIGN: DNM</u></p>
+                        <p>COPYRIGHT PRASIDDHI GROUP. ALL RIGHTS RESERVED.<u style={{ cursor: 'pointer' }} onClick={() => router.push('/terms&Conditions')}>| TERMS & CONDITIONS | DESIGN: DNM</u></p>
                     </div>
                 </div>
                 <div className={styles.socialIcons}>
@@ -76,7 +82,7 @@ function Footer() {
                     </Link>
                 </div>
             </div>
-            <p className={styles.copyRightContent}>COPYRIGHT PRASIDDHI GROUP. ALL RIGHTS RESERVED.<u style={{cursor:'pointer'}} onClick={() => router.push('/terms&Conditions')}>| TERMS & CONDITIONS | DESIGN: DNM</u></p>
+            <p className={styles.copyRightContent}>COPYRIGHT PRASIDDHI GROUP. ALL RIGHTS RESERVED.<u style={{ cursor: 'pointer' }} onClick={() => router.push('/terms&Conditions')}>| TERMS & CONDITIONS | DESIGN: DNM</u></p>
         </>
     );
 }
