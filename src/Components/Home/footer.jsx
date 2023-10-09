@@ -27,39 +27,40 @@ function Footer() {
         if (typeof window !== 'undefined') {
             window.lintrk = window.lintrk || function () {
                 (window.lintrk.q = window.lintrk.q || []).push(arguments);
-            };
-            // Initialize the tracking code, if needed
-            window.lintrk('track', { conversion_id: '15736121' });
 
-            // LinkedIn tracking script
-            _linkedin_partner_id = "6153921";
-            window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
-            window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+                // Initialize the tracking code, if needed
+                window.lintrk('track', { conversion_id: '15736121' });
 
-            (function (l) {
-                if (!l) {
-                    window.lintrk = function (a, b) {
-                        window.lintrk.q.push([a, b])
-                    };
-                    window.lintrk.q = []
-                }
-                var s = document.getElementsByTagName("script")[0];
-                var b = document.createElement("script");
-                b.type = "text/javascript";
-                b.async = true;
-                b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
-                s.parentNode.insertBefore(b, s);
-            })(window.lintrk);
+                // LinkedIn tracking script
+                _linkedin_partner_id = "6153921";
+                window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+                window._linkedin_data_partner_ids.push(_linkedin_partner_id);
 
-            // LinkedIn noscript tracking pixel
-            const img = document.createElement("img");
-            img.height = 1;
-            img.width = 1;
-            img.style.display = "none";
-            img.alt = "";
-            img.src = "https://px.ads.linkedin.com/collect/?pid=6153921&fmt=gif";
-            document.getElementsByTagName("noscript")[0].appendChild(img);
-        }
+                (function (l) {
+                    if (!l) {
+                        window.lintrk = function (a, b) {
+                            window.lintrk.q.push([a, b])
+                        };
+                        window.lintrk.q = []
+                    }
+                    var s = document.getElementsByTagName("script")[0];
+                    var b = document.createElement("script");
+                    b.type = "text/javascript";
+                    b.async = true;
+                    b.src = "https://snap.licdn.com/li.lms-analytics/insight.min.js";
+                    s.parentNode.insertBefore(b, s);
+                })(window.lintrk);
+
+                // LinkedIn noscript tracking pixel
+                const img = document.createElement("img");
+                img.height = 1;
+                img.width = 1;
+                img.style.display = "none";
+                img.alt = "";
+                img.src = "https://px.ads.linkedin.com/collect/?pid=6153921&fmt=gif";
+                document.getElementsByTagName("noscript")[0].appendChild(img);
+            }
+        };
     }, []);
 
     return (
