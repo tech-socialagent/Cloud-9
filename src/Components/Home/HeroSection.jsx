@@ -47,7 +47,7 @@ const HeroSection = () => {
         const leadData = formData;
         axios.post('/api/zohonew', leadData)
             .then((response) => {
-                console.log(response);
+                // console.log(response);
                 setSending(false);
                 setFormData({
                     name: '',
@@ -58,7 +58,7 @@ const HeroSection = () => {
                 router.push('/thankyou')
             })
             .catch((error) => {
-                console.error('Error sending data:', error);
+                // console.error('Error sending data:', error);
             });
 
         emailjs.send("service_pker1vg", "template_b0e6cwb", leadData, "5rfKZaLJ19e--qaGr")
