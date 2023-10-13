@@ -7,11 +7,10 @@ import { useRouter } from 'next/router';
 
 const HeroSection = () => {
 
-    // const [ sending, setSending ] = useState(true);
     const router = useRouter();
     const { setPopupOpen } = useContext(PopupContext);
 
-    const [open, setOpen] = useState(false);
+    const [error, setError] = useState(false);
     const [sending, setSending] = useState(false);
 
     const [formData, setFormData] = useState({
@@ -26,14 +25,29 @@ const HeroSection = () => {
         setFormData({ ...formData, [name]: value });
     };
 
+    const validatePhone = (phone) => {
+        // You can add your phone number validation logic here.
+        // For example, check if it's a 10-digit number.
+        const isValid = /^\d{10}$/.test(phone);
+        return isValid;
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
         setSending(true);
-        const leadData = formData
+
+        if (!validatePhone(formData.phone)) {
+            setError(true);
+            setSending(false);
+            return;
+        }
+
+        setError(false);
+
+        const leadData = formData;
         axios.post('/api/zohonew', leadData)
             .then((response) => {
                 console.log(response);
-                setOpen(true);
                 setSending(false);
                 setFormData({
                     name: '',
@@ -75,8 +89,10 @@ const HeroSection = () => {
                         <input type="email" placeholder='Email' value={formData.email} name='email' onChange={handleInputChange} required />
                         <input type="tel" placeholder='Phone Number' value={formData.phone} name='phone' onChange={handleInputChange} required />
                     </div>
-                    <button className={styles.heroBtn} type='submit' style={{ cursor: sending === true ? 'not-allowed' : 'pointer' }}>{ sending === true ? 'Sending...' : 'SUBMIT'}</button>
-                   {/*open && <p>Thank you for submitting. Our team will get back to you soon.</p>*/}
+                    <button className={styles.heroBtn} type='submit' style={{ cursor: sending === true ? 'not-allowed' : 'pointer' }}>
+                        {sending === true ? 'Sending...' : 'SUBMIT'}
+                    </button>
+                    {error && <p className={styles.error}>Invalid phone number. Please enter a 10-digit number.</p>}
                 </form>
                 <div className={styles.enquire} onClick={() => setPopupOpen(true)}>Enquire Now</div>
             </div>
@@ -85,4 +101,4 @@ const HeroSection = () => {
     )
 }
 
-export default HeroSection
+export default HeroSection;

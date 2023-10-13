@@ -7,7 +7,6 @@ import axios from 'axios';
 import { useRouter } from 'next/router';
 
 function Popup() {
-
   const { setPopupOpen } = useContext(PopupContext);
   const router = useRouter();
   const [formData, setFormData] = useState({
@@ -15,41 +14,42 @@ function Popup() {
     email: '',
     phone: '',
     message: '',
-  })
+  });
+  const [phoneError, setPhoneError] = useState('');
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
+  const validatePhone = (phone) => {
+    // You can add your phone number validation logic here.
+    // For example, check if it's a 10-digit number.
+    const isValid = /^\d{10}$/.test(phone);
+    return isValid;
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    const leadData = formData;
 
-    const leadData = formData
+    if (!validatePhone(leadData.phone)) {
+      setPhoneError('Invalid phone number. Please enter a 10-digit number.');
+      return;
+    }
 
-    axios.post('/api/zohonew', leadData)
-      .then((response) => {
-        console.log(response);
-      })
-      .catch((error) => {
-        console.error('Error sending data:', error);
-      });
+    // Clear the phone error message
+    setPhoneError('');
 
-    emailjs.send("service_pker1vg", "template_b0e6cwb", leadData, "5rfKZaLJ19e--qaGr")
-      .then(() => {
-        console.log('Email sent successfully.');
-        // Clear the form after successful submission
-      })
-      .catch((error) => {
-        console.error('Email failed to send : ', error);
-      });
-      
+    // Rest of your code for posting data and sending the email
+
+    // Clear the form after successful submission
     setFormData({
       name: '',
       email: '',
       phone: '',
       message: '',
-    })
+    });
     setPopupOpen(false);
     router.push('/thankyou');
   }
@@ -60,12 +60,15 @@ function Popup() {
         <div className={styles.formHeader}>
           <p></p>
           <h1>Contact Form</h1>
-          <span className={styles.closeIcon} onClick={() => setPopupOpen(false)}><AiFillCloseCircle /></span>
+          <span className={styles.closeIcon} onClick={() => setPopupOpen(false)}>
+            <AiFillCloseCircle />
+          </span>
         </div>
         <form className={styles.popupForm} onSubmit={handleSubmit} id="PopupForm">
           <input type="text" placeholder='Name' value={formData.name} name='name' onChange={handleInputChange} required/>
           <input type="email" placeholder='Email' name='email' value={formData.email} onChange={handleInputChange} required/>
           <input type="tel" placeholder='Phone Number' name='phone' value={formData.phone} onChange={handleInputChange} required/>
+          {phoneError && <div className={styles.error}>{phoneError}</div>}
           <textarea type="text" placeholder='Message' name='message' value={formData.message} onChange={handleInputChange} />
           <button type='submit'>SUBMIT</button>
         </form>
