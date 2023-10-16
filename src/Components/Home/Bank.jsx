@@ -14,6 +14,7 @@ function BankSection() {
 
     const [open, setOpen] = useState(false);
     const [sending, setSending] = useState(false);
+    const [ error, setError ] = useState(false);
     const router = useRouter();
     const [formData, setFormData] = useState({
         name: '',
@@ -27,10 +28,25 @@ function BankSection() {
         setFormData({ ...formData, [name]: value });
     };
 
+    const validatePhone = (phone) => {
+        // You can add your phone number validation logic here.
+        // For example, check if it's a 10-digit number.
+        const isValid = /^\d{10}$/.test(phone);
+        return isValid;
+    };
+
     const handleSubmit = (event) => {
+
         event.preventDefault();
         setSending(true);
 
+        if (!validatePhone(formData.phone)) {
+            setError(true);
+            setSending(false);
+            return;
+        }
+
+        setError(false);
         const leadData = formData
         axios.post('/api/zohonew', leadData)
             .then((response) => {
@@ -57,7 +73,6 @@ function BankSection() {
             .catch((error) => {
                 console.error('Email failed to send : ', error);
             });
-
     }
 
     const bankImgData = [
@@ -124,6 +139,7 @@ function BankSection() {
                     </div>
                     <button type="submit" className={styles.formBtn} style={{ cursor: sending ? "not-allowed" : "pointer" }}>{sending === true ? 'Sending...' : 'Send Message'}</button>
                     {/*open && <p>Thank you for submitting. Our team will get back to you soon.</p>*/}
+                    { error && <p style={{color:'red'}}>Invalid phone number. Please enter a 10-digit number.</p> }
                 </form>
                 <div className={styles.formRight}>
                     <h1>Get in touch to schedule a visit to your new house.</h1>
