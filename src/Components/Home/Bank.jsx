@@ -14,13 +14,14 @@ function BankSection() {
 
     const [open, setOpen] = useState(false);
     const [sending, setSending] = useState(false);
-    const [ error, setError ] = useState(false);
+    const [error, setError] = useState(false);
     const router = useRouter();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         phone: '',
         message: '',
+        form: 'Get In Touch',
     })
 
     const handleInputChange = (event) => {
@@ -48,26 +49,16 @@ function BankSection() {
 
         setError(false);
         const leadData = formData
-        axios.post('/api/zohonew', leadData)
-            .then((response) => {
-                console.log(response);
+
+        emailjs.send('service_wfwycll', 'template_ozdcqkh', formData, 'YTFsXtnQP6iiQDlD8')
+            .then(() => {
                 setSending(false);
-                setOpen(true);
                 setFormData({
                     name: '',
                     email: '',
                     phone: '',
                     message: '',
-                });
-                router.push('/thankyou');
-            })
-            .catch((error) => {
-                console.error('Error sending data:', error);
-            });
-
-        emailjs.send("service_pker1vg", "template_b0e6cwb", leadData, "5rfKZaLJ19e--qaGr")
-            .then(() => {
-                console.log('Email sent successfully.');
+                })
                 // Clear the form after successful submission
             })
             .catch((error) => {
@@ -139,7 +130,7 @@ function BankSection() {
                     </div>
                     <button type="submit" className={styles.formBtn} style={{ cursor: sending ? "not-allowed" : "pointer" }}>{sending === true ? 'Sending...' : 'Send Message'}</button>
                     {/*open && <p>Thank you for submitting. Our team will get back to you soon.</p>*/}
-                    { error && <p style={{color:'red'}}>Invalid phone number. Please enter a 10-digit number.</p> }
+                    {error && <p style={{ color: 'red' }}>Invalid phone number. Please enter a 10-digit number.</p>}
                 </form>
                 <div className={styles.formRight}>
                     <h1>Get in touch to schedule a visit to your new house.</h1>

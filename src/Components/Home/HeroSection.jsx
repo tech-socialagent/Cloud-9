@@ -18,6 +18,7 @@ const HeroSection = () => {
         email: '',
         phone: '',
         message: '',
+        form: 'Hero Section',
     })
 
     const handleInputChange = (event) => {
@@ -44,27 +45,18 @@ const HeroSection = () => {
 
         setError(false);
 
-        const leadData = formData;
-        axios.post('/api/zohonew', leadData)
-            .then((response) => {
-                // console.log(response);
-                setSending(false);
+
+
+        emailjs.send('service_wfwycll', 'template_ozdcqkh', formData, 'YTFsXtnQP6iiQDlD8')
+            .then(() => {
+                // Clear the form after successful submission
+                setSending(false)
                 setFormData({
                     name: '',
                     email: '',
                     phone: '',
                     message: '',
                 })
-                router.push('/thankyou')
-            })
-            .catch((error) => {
-                // console.error('Error sending data:', error);
-            });
-
-        emailjs.send("service_pker1vg", "template_b0e6cwb", leadData, "5rfKZaLJ19e--qaGr")
-            .then(() => {
-                console.log('Email sent successfully.');
-                // Clear the form after successful submission
             })
             .catch((error) => {
                 console.error('Email failed to send : ', error);
