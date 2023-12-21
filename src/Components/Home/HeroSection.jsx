@@ -45,12 +45,11 @@ const HeroSection = () => {
 
         setError(false);
 
-
-
         emailjs.send('service_wfwycll', 'template_ozdcqkh', formData, 'YTFsXtnQP6iiQDlD8')
             .then(() => {
                 // Clear the form after successful submission
                 setSending(false)
+                console.log("sent");
                 setFormData({
                     name: '',
                     email: '',
